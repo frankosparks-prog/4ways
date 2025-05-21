@@ -110,7 +110,7 @@ const formatDateWithSuffix = (dateStr) => {
       {/* Hero Section */}
       <section className="bg-amber-100 text-center py-16 px-4">
         <h1 className="text-4xl font-bold text-amber-900 mb-4">
-          Beadworks Blog
+          Fourways_Secondhand_Clothes Blog
         </h1>
         <p className="text-lg text-amber-800 max-w-xl mx-auto">
           Stories, insights, and style tips from the world of beads and fashion.

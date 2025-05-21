@@ -198,8 +198,7 @@ import {
   ChevronRight,
   Search as SearchIcon,
 } from "lucide-react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import "react-quill/dist/quill.snow.css";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const API = process.env.REACT_APP_SERVER_URL; // vite / CRA
