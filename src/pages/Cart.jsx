@@ -1,106 +1,124 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
 import { Trash2, Plus, Minus } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
-  const navigate = useNavigate();
+
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  const handleCheckout = () => {
-    if (cartItems.length === 0) {
-      alert('Your cart is empty!');
-    } else {
-      navigate('/checkout');
-    }
-  };
+  // Format WhatsApp message
+  const whatsappText = encodeURIComponent(
+    `Hi Johnsaga! I'm interested in buying the following items:\n\n${cartItems
+      .map(
+        (item) =>
+          `• ${item.name} (Qty: ${item.quantity}) - Ksh ${(
+            item.price * item.quantity
+          ).toFixed(2)}`
+      )
+      .join('\n')}\n\nTotal: Ksh ${subtotal.toFixed(2)}`
+  );
+
+  const whatsappLink = `https://wa.me/254738380692?text=${whatsappText}`;
 
   return (
-    <div className="max-w-6xl mx-auto mt-16 p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {/* Cart Items List */}
-      <div className="lg:col-span-2 space-y-6">
-        <h2 className="text-3xl font-extrabold text-amber-900 mb-6 border-b pb-3">
-          Your Cart 🛒
-        </h2>
+    <div className="max-w-6xl mx-auto mt-24 px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 text-gray-800">
+      {/* Cart Items Section */}
+      <section className="lg:col-span-2 space-y-6">
+        <h2 className="text-3xl font-bold text-blue-800 border-b pb-4">🛒 Your Cart</h2>
 
         {cartItems.length === 0 ? (
-          <p className="text-gray-500 text-lg">Your cart is empty.</p>
+          <div className="text-gray-500 text-lg">
+            Your cart is currently empty.{' '}
+            <Link to="/" className="text-blue-700 hover:underline">
+              Start shopping →
+            </Link>
+          </div>
         ) : (
           cartItems.map((item) => (
             <div
               key={item.id}
-              className="flex bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="flex items-center bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
             >
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-28 h-28 object-cover rounded-l-xl"
+                className="w-28 h-28 object-cover flex-shrink-0"
               />
-              <div className="flex flex-col justify-between p-4 flex-grow">
+              <div className="flex flex-col flex-grow px-4 py-3 justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-amber-900">{item.name}</h3>
-                  <p className="text-amber-700 font-semibold mt-1">${item.price.toFixed(2)}</p>
-                  <p className="text-gray-600 mt-2 line-clamp-3">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-blue-900">{item.name}</h3>
+                  <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                    {item.description}
+                  </p>
                 </div>
 
-                <div className="flex items-center justify-between mt-4">
-                  {/* Quantity controls */}
-                  <div className="flex items-center border rounded-md overflow-hidden select-none">
+                <div className="mt-3 flex items-center justify-between">
+                  {/* Quantity Controls */}
+                  <div className="flex items-center border rounded-md overflow-hidden">
                     <button
                       onClick={() => updateQuantity(item.id, -1)}
                       disabled={item.quantity <= 1}
-                      className={`px-3 py-1 text-amber-700 hover:bg-amber-100 disabled:opacity-50 disabled:cursor-not-allowed transition`}
+                      className="px-3 py-1 text-blue-700 hover:bg-blue-100 disabled:opacity-40 transition"
                     >
                       <Minus size={16} />
                     </button>
-                    <span className="px-4 font-semibold text-amber-900">{item.quantity}</span>
+                    <span className="px-4 font-semibold text-blue-900">{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.id, 1)}
-                      className="px-3 py-1 text-amber-700 hover:bg-amber-100 transition"
+                      className="px-3 py-1 text-blue-700 hover:bg-blue-100 transition"
                     >
                       <Plus size={16} />
                     </button>
                   </div>
 
-                  {/* Remove button */}
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-red-600 hover:text-red-800 transition"
-                    aria-label={`Remove ${item.name} from cart`}
-                  >
-                    <Trash2 size={24} />
-                  </button>
+                  {/* Price + Remove */}
+                  <div className="flex items-center gap-6">
+                    <p className="text-blue-800 font-semibold">
+                      Ksh {(item.price * item.quantity).toFixed(2)}
+                    </p>
+                    <button
+                      onClick={() => removeFromCart(item.id)}
+                      className="text-red-600 hover:text-red-800"
+                    >
+                      <Trash2 size={20} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           ))
         )}
-      </div>
+      </section>
 
-      {/* Summary & Checkout */}
-      <aside className="bg-white rounded-xl shadow-md p-6 sticky top-28 h-fit">
-        <h3 className="text-2xl font-bold text-amber-900 mb-6 border-b pb-3">
-          Order Summary
+      {/* Summary / WhatsApp CTA */}
+      <aside className="bg-white shadow-md rounded-xl p-6 h-fit sticky top-28">
+        <h3 className="text-2xl font-semibold text-blue-900 mb-6 border-b pb-4">
+          Summary
         </h3>
-        <div className="flex justify-between text-lg font-semibold text-amber-800 mb-6">
+        <div className="flex justify-between text-lg font-medium text-gray-700 mb-4">
           <span>Subtotal</span>
-          <span>ksh {subtotal.toFixed(2)}</span>
+          <span>Ksh {subtotal.toFixed(2)}</span>
         </div>
-        <button
-          onClick={handleCheckout}
-          disabled={cartItems.length === 0}
-          className={`w-full py-3 rounded-full text-white text-lg font-semibold transition ${
-            cartItems.length === 0
-              ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-amber-700 hover:bg-amber-800'
+
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`block mt-6 bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition ${
+            cartItems.length === 0 ? 'pointer-events-none opacity-50' : ''
           }`}
         >
-          Checkout
-        </button>
+          Book or Buy via WhatsApp
+        </a>
+
+        <p className="text-sm text-gray-500 mt-3">
+          We'll confirm your order and guide you through the next steps on WhatsApp.
+        </p>
       </aside>
     </div>
   );

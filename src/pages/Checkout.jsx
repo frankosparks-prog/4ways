@@ -49,7 +49,7 @@ function Checkout() {
               <div className="flex flex-col justify-between p-4 flex-grow">
                 <div>
                   <h3 className="text-xl font-semibold text-amber-900">{item.name}</h3>
-                  <p className="text-amber-700 font-semibold mt-1">${item.price.toFixed(2)}</p>
+                  <p className="text-amber-700 font-semibold mt-1">ksh {item.price.toFixed(2)}</p>
                 </div>
 
                 <div className="flex items-center justify-between mt-4">

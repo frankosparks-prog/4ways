@@ -3,7 +3,6 @@ import { FaHeart, FaStar, FaCartPlus } from "react-icons/fa";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
-// Simulated sample products — in real case, fetch from backend or props
 const sampleProducts = Array.from({ length: 12 }).map((_, i) => ({
   id: (i + 1).toString(),
   name: `Sample Product ${i + 1}`,
@@ -32,73 +31,83 @@ const ProductDetails = () => {
   const toggleLike = () => setLiked((prev) => !prev);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 mt-10 bg-white shadow-lg rounded-lg">
-      {/* Header */}
+    <div className="max-w-6xl mx-auto px-6 py-12 mt-10 bg-white shadow-xl rounded-3xl border border-blue-100">
+      {/* Layout */}
       <div className="flex flex-col md:flex-row gap-10">
-        {/* Left: Product Image */}
+        {/* Image Section */}
         <div className="flex-1">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 object-cover"
+            className="w-full h-full rounded-2xl shadow-md object-cover hover:scale-105 transition-transform duration-300"
           />
         </div>
 
-        {/* Right: Product Info */}
-        <div className="flex-1 space-y-4">
-          <h2 className="text-3xl font-bold text-amber-900">{product.name}</h2>
-          <p className="text-2xl font-semibold text-amber-700">
-            Ksh {product.price}
-          </p>
+        {/* Info Section */}
+        <div className="flex-1 flex flex-col justify-between">
+          <div className="space-y-5">
+            <h1 className="text-4xl font-extrabold text-blue-900">
+              {product.name}
+            </h1>
+            <p className="text-2xl font-semibold text-blue-700">
+              Ksh {product.price.toLocaleString()}
+            </p>
 
-          {/* Rating */}
-          <div className="flex items-center gap-1 text-yellow-500">
-            {[...Array(5)].map((_, i) => (
-              <FaStar
-                key={i}
-                className={
-                  i < product.rating ? "text-yellow-400" : "text-gray-300"
-                }
-              />
-            ))}
-            <span className="ml-2 text-sm text-gray-600">
-              ({product.rating} / 5)
-            </span>
+            {/* Rating */}
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <FaStar
+                  key={i}
+                  className={
+                    i < product.rating
+                      ? "text-yellow-400"
+                      : "text-gray-300"
+                  }
+                />
+              ))}
+              <span className="ml-2 text-sm text-gray-500">
+                {product.rating} / 5
+              </span>
+            </div>
+
+            {/* Description */}
+            <p className="text-gray-700 text-base leading-relaxed">
+              {product.description}
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex gap-4 mt-6">
+              <button
+                onClick={toggleLike}
+                className={`p-3 rounded-full border-2 transition-all shadow-sm ${
+                  liked
+                    ? "bg-red-100 border-red-400 text-red-500"
+                    : "bg-white border-blue-300 text-blue-700 hover:bg-blue-50"
+                }`}
+                title={liked ? "Unlike" : "Like"}
+              >
+                <FaHeart />
+              </button>
+
+              <button
+                onClick={() => addToCart(product)}
+                className="flex items-center gap-2 px-6 py-3 bg-blue-700 text-white rounded-xl hover:bg-blue-800 transition shadow-md"
+              >
+                <FaCartPlus />
+                Add to Cart
+              </button>
+            </div>
           </div>
 
-          {/* Description */}
-          <p className="text-gray-700 leading-relaxed">{product.description}</p>
-
-          {/* Actions */}
-          <div className="flex items-center gap-4 mt-6">
-            <button
-              onClick={toggleLike}
-              className={`p-3 rounded-full border-2 transition-all ${
-                liked
-                  ? "bg-red-100 border-red-500 text-red-500"
-                  : "bg-white border-amber-900 text-amber-900 hover:bg-amber-100"
-              }`}
-              title={liked ? "Unlike" : "Like"}
+          {/* Back Link */}
+          <div className="mt-10">
+            <Link
+              to="/shop"
+              className="text-sm text-blue-600 hover:underline transition"
             >
-              <FaHeart />
-            </button>
-
-            <button
-              className="flex items-center gap-2 bg-amber-900 text-white px-6 py-3 rounded-lg hover:bg-amber-800 transition"
-              onClick={() => addToCart(product)}
-            >
-              <FaCartPlus />
-              Add to Cart
-            </button>
+              ← Back to Shop
+            </Link>
           </div>
-
-          {/* Back link */}
-          <Link
-            to="/shop"
-            className="inline-block mt-8 text-sm text-amber-600 hover:underline"
-          >
-            ← Back to Shop
-          </Link>
         </div>
       </div>
     </div>
@@ -106,6 +115,7 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
 
 // // Add a "You might also like" section at the bottom with related products.
 

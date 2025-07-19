@@ -77,7 +77,7 @@ function AppLayout() {
           success: {
             iconTheme: {
               primary: 'white',
-              secondary: '#92400e',
+              secondary: 'green',
             },
           },
         }}

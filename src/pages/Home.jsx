@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Import Google Fonts Poppins
+// Google Fonts
 const fontLink = (
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
@@ -20,247 +20,209 @@ function Home() {
     <>
       {fontLink}
       <main
-        className="min-h-screen bg-gray-50 text-gray-900"
+        className="min-h-screen bg-white text-gray-900"
         style={{ fontFamily: "'Poppins', sans-serif" }}
       >
-        {/* Hero Section */}
-        <section
-          className="relative flex flex-col justify-center items-center text-center px-6 py-32 md:py-40 bg-gradient-to-br from-purple-700 via-amber-800 to-blue-900 overflow-hidden"
-          aria-label="Hero Section"
-        >
-          {/* Decorative geometric overlay */}
-          <svg
-            className="absolute inset-0 w-full h-full opacity-10"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid slice"
-            fill="none"
-            viewBox="0 0 800 600"
-          >
-            <circle cx="400" cy="300" r="300" fill="url(#grad1)" />
-            <defs>
-              <radialGradient
-                id="grad1"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-                spreadMethod="pad"
-              >
-                <stop offset="0%" stopColor="#d8b4fe" />
-                <stop offset="100%" stopColor="#6366f1" />
-              </radialGradient>
-            </defs>
-          </svg>
+        {/* HERO SECTION */}
+        <section className="relative flex flex-col justify-center items-center text-center px-6 py-48 bg-gradient-to-br from-blue-950 via-indigo-900 to-cyan-800 text-white overflow-hidden">
+          {/* Overlay glow effect */}
+          <div className="absolute inset-0 bg-black/30 z-0 backdrop-blur-sm" />
 
-          <h1
-            className="relative z-10 text-white text-5xl md:text-6xl font-extrabold max-w-4xl drop-shadow-lg"
-            data-aos="fade-down"
-          >
-            Stylish Secondhand Clothes<br />At Unbeatable Prices
-          </h1>
-          <p
-            className="relative z-10 mt-6 max-w-3xl text-lg md:text-xl font-medium text-amber-200 drop-shadow"
-            data-aos="fade-up"
-          >
-            Discover sustainable fashion with quality pre-loved items — refresh your wardrobe without hurting the planet.
-          </p>
-          <Link to="/shop" className="relative z-10 mt-10">
-            <button
-              className="bg-gradient-to-r from-purple-600 to-amber-700 text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:brightness-110 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-400"
-              data-aos="zoom-in"
+          {/* Content */}
+          <div className="relative z-10 max-w-4xl mx-auto" data-aos="fade-down">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-xl">
+              <span className="text-cyan-400">Redefining</span> Elegance
+              <br />
+              <span className="text-indigo-300">with Every Look</span>
+            </h1>
+
+            <p
+              className="mt-6 text-lg sm:text-xl font-light text-blue-100 tracking-wide"
+              data-aos="fade-up"
             >
-              Shop Now
-            </button>
-          </Link>
+              At{" "}
+              <span className="font-semibold text-white">
+                Johnsaga Fashions
+              </span>
+              , we bring you iconic styles, timeless class, and curated pieces
+              that elevate your wardrobe.
+            </p>
+
+            <Link to="/shop" className="inline-block mt-10" data-aos="zoom-in">
+              <button className="bg-gradient-to-r from-cyan-600 to-indigo-700 hover:from-indigo-700 hover:to-cyan-600 text-white font-semibold px-10 py-4 rounded-full shadow-xl hover:scale-105 transition-all duration-300">
+                Explore Our Collection
+              </button>
+            </Link>
+          </div>
+
+          {/* Decorative SVG pattern (optional) */}
+          <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
+            <svg
+              viewBox="0 0 500 150"
+              preserveAspectRatio="none"
+              className="w-full h-20 text-white opacity-10"
+            >
+              <path
+                d="M0.00,49.98 C150.00,150.00 350.00,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                className="fill-current"
+              ></path>
+            </svg>
+          </div>
         </section>
 
-        {/* About Section */}
-        <section
-          className="py-20 px-6 bg-white max-w-5xl mx-auto text-center"
-          aria-labelledby="about-heading"
-        >
+        {/* ABOUT SECTION */}
+        <section className="py-24 px-6 max-w-5xl mx-auto text-center">
           <h2
-            id="about-heading"
-            className="text-4xl font-semibold mb-6 tracking-wide text-amber-900"
+            className="text-4xl font-bold mb-6 text-blue-900"
             data-aos="fade-up"
           >
-            Why Choose Fourways Secondhand?
+            Welcome to Johnsaga Fashions
           </h2>
           <p
-            className="text-amber-700 text-lg leading-relaxed max-w-3xl mx-auto font-medium"
+            className="text-blue-800 text-lg leading-relaxed max-w-3xl mx-auto font-medium"
             data-aos="fade-up"
             data-aos-delay="150"
           >
-            We believe in fashion that’s affordable, sustainable, and stylish. Our carefully curated collection of secondhand clothes gives you trendy options while reducing waste and supporting the community.
+            We’re not just a fashion store — we’re a lifestyle brand. Our
+            handpicked outfits blend global trends with African flair to help
+            you stand out, every day.
           </p>
         </section>
 
-        {/* Featured Products */}
-        <section className="bg-amber-50 py-20 px-6">
+        {/* FEATURED PICKS */}
+        <section className="bg-blue-50 py-24 px-6">
           <h2
-            className="text-4xl font-semibold text-center mb-14 tracking-tight text-amber-900"
+            className="text-4xl font-bold text-center mb-16 text-blue-900"
             data-aos="fade-up"
           >
-            Featured Picks
+            Handpicked Highlights
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {[1, 2, 3].map((item) => (
               <article
                 key={item}
-                className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-2 cursor-pointer"
+                className="bg-white shadow-md rounded-xl p-6 hover:shadow-2xl transition-transform hover:-translate-y-2"
                 data-aos="zoom-in"
                 data-aos-delay={item * 150}
-                tabIndex={0}
-                role="group"
-                aria-label={`Featured Clothing Item ${item}`}
               >
                 <div
-                  className="h-56 bg-cover bg-center rounded-lg mb-5 transition-transform duration-300 group-hover:scale-105"
+                  className="h-64 bg-cover bg-center rounded-lg mb-5"
                   style={{
-                    backgroundImage: `url('https://picsum.photos/400/500?random=${item + 20}')`,
+                    backgroundImage: `url('https://picsum.photos/400/500?random=${
+                      item + 100
+                    }')`,
                   }}
-                  aria-hidden="true"
                 />
-                <h3 className="text-2xl font-semibold text-amber-900 mb-2">
-                  Stylish Jacket {item}
+                <h3 className="text-2xl font-semibold text-blue-900 mb-2">
+                  Signature Style {item}
                 </h3>
-                <p className="text-gray-600 mb-4 text-base font-light">
-                  Trendy and comfy secondhand jacket, perfect for all seasons.
+                <p className="text-gray-600 mb-3 font-light">
+                  Elevate your fit with this refined, fashion-forward piece.
                 </p>
-                <span className="font-bold text-amber-700 text-lg">ksh 40.00</span>
+                <span className="font-bold text-indigo-600 text-lg">
+                  KSh 2,950
+                </span>
               </article>
             ))}
           </div>
           <div className="text-center mt-14">
             <Link to="/shop">
-              <button className="bg-gradient-to-r from-purple-600 to-amber-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:brightness-110 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-400">
-                View All Products
+              <button className="bg-gradient-to-r from-cyan-600 to-indigo-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                View Full Collection
               </button>
             </Link>
           </div>
         </section>
 
-        {/* Newsletter Signup Section */}
-        <section
-          className="py-20 px-6 bg-white text-center max-w-xl mx-auto"
-          data-aos="fade-up"
-          aria-label="Newsletter Signup"
-        >
-          <h2 className="text-4xl font-semibold text-amber-900 mb-6">
-            Join Our Fashion Community
+        {/* CUSTOMER STYLE SHOWCASE */}
+        <section className="bg-white py-24 px-6">
+          <h2
+            className="text-4xl font-bold text-center mb-14 text-blue-900"
+            data-aos="fade-up"
+          >
+            #JohnsagaLooks
           </h2>
-          <p className="text-amber-700 mb-8 text-lg font-medium">
-            Subscribe to get the latest styles, exclusive deals, and sustainable fashion tips.
+          <div
+            className="flex gap-6 overflow-x-scroll scrollbar-hide px-4 max-w-7xl mx-auto"
+            data-aos="zoom-in"
+          >
+            {[1, 2, 3, 4, 5, 6].map((img) => (
+              <div
+                key={img}
+                className="min-w-[300px] h-80 rounded-xl overflow-hidden shadow-lg flex-shrink-0 transform hover:scale-105 transition duration-300"
+              >
+                <img
+                  src={`https://picsum.photos/400/300?random=${img + 70}`}
+                  alt={`Johnsaga fashion ${img}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <p className="text-center mt-8 text-blue-700">
+            Styled by our vibrant community. Tag us to get featured.
           </p>
-          <form className="flex flex-col sm:flex-row gap-5 justify-center" aria-live="polite">
+        </section>
+
+        {/* NEWSLETTER SIGNUP */}
+        <section className="py-20 px-6 bg-blue-50 text-center max-w-xl mx-auto">
+          <h2 className="text-4xl font-bold text-blue-900 mb-6">
+            Stay Ahead in Style
+          </h2>
+          <p className="text-blue-800 mb-8 text-lg font-medium">
+            Be the first to know about fresh drops, limited deals & exclusive
+            looks.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-5 justify-center">
             <input
               type="email"
-              aria-label="Email address"
               placeholder="Enter your email"
-              className="px-5 py-3 border border-amber-300 rounded-md focus:outline-none focus:ring-4 focus:ring-amber-500 flex-grow text-lg"
+              className="px-5 py-3 border border-blue-300 rounded-md text-lg focus:outline-none focus:ring-4 focus:ring-blue-400"
             />
             <button
               type="submit"
-              className="bg-gradient-to-r from-purple-600 to-amber-700 text-white font-semibold px-8 py-3 rounded-md shadow-md hover:brightness-110 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-400"
+              className="bg-gradient-to-r from-cyan-600 to-indigo-700 text-white font-semibold px-8 py-3 rounded-md shadow-md hover:scale-105 transition-transform"
             >
               Subscribe
             </button>
           </form>
         </section>
 
-        {/* Blog Section */}
-        <section className="bg-amber-50 py-20 px-6">
+        {/* BLOG / STYLE TIPS */}
+        <section className="bg-white py-24 px-6">
           <h2
-            className="text-4xl font-semibold text-center mb-14 tracking-tight text-amber-900"
+            className="text-4xl font-bold text-center mb-14 text-blue-900"
             data-aos="fade-up"
           >
-            Style Tips & Stories
+            Style Guides & Inspiration
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {[1, 2, 3].map((blog) => (
               <article
                 key={blog}
-                className="bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 cursor-pointer"
+                className="bg-blue-50 rounded-xl shadow-md p-6 hover:shadow-xl transition"
                 data-aos="fade-up"
                 data-aos-delay={blog * 100}
-                tabIndex={0}
-                role="group"
-                aria-label={`Blog Post ${blog}`}
               >
                 <img
-                  src={`https://picsum.photos/400/300?random=${blog + 30}`}
-                  alt={`Blog thumbnail ${blog}`}
+                  src={`https://picsum.photos/400/250?random=${blog + 90}`}
+                  alt={`Blog ${blog}`}
                   className="w-full h-52 object-cover rounded-md mb-5"
-                  loading="lazy"
                 />
-                <h3 className="text-2xl font-semibold text-amber-900 mb-3">
-                  Blog Title {blog}
+                <h3 className="text-2xl font-semibold text-blue-900 mb-3">
+                  Fashion Talk {blog}
                 </h3>
-                <p className="text-gray-600 mb-5 text-base font-light">
-                  Expert tips on rocking secondhand fashion and making it your own.
+                <p className="text-gray-600 mb-4">
+                  Fresh takes on styling essentials, seasonal looks, and more.
                 </p>
-                <Link to={`/blog/${blog}`} className="text-amber-700 font-medium hover:underline">
-                  Read More &rarr;
+                <Link
+                  // to={`/blog/${blog}`}
+                  to={`/blog`}
+                  className="text-indigo-600 font-medium hover:underline"
+                >
+                  Read More →
                 </Link>
               </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Instagram Grid */}
-        <section className="py-20 px-6 bg-white">
-          <h2
-            className="text-4xl font-semibold text-center mb-14 tracking-wide text-amber-900"
-            data-aos="fade-up"
-          >
-            #FourwaysFashion
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
-            {[7, 8, 9, 10, 11, 12].map((img) => (
-              <div
-                key={img}
-                className="overflow-hidden rounded-lg shadow-lg cursor-pointer"
-                data-aos="zoom-in"
-                data-aos-delay={img * 20}
-                tabIndex={0}
-                role="img"
-                aria-label={`Instagram image ${img}`}
-              >
-                <img
-                  src={`https://picsum.photos/400/250?random=${img + 40}`}
-                  alt="Instagram Grid"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Gallery Section */}
-        <section className="py-20 px-6 bg-white">
-          <h2
-            className="text-4xl font-semibold text-center mb-14 tracking-wide text-amber-900"
-            data-aos="fade-up"
-          >
-            Shop Our Collection
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="rounded overflow-hidden shadow-md hover:shadow-xl transition"
-                data-aos="fade-up"
-                data-aos-delay={item * 100}
-              >
-                <img
-                  src={`https://picsum.photos/400/250?random=${item + 50}`}
-                  alt="Gallery"
-                  className="w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
             ))}
           </div>
         </section>
@@ -270,7 +232,6 @@ function Home() {
 }
 
 export default Home;
-
 
 // import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";

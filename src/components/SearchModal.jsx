@@ -34,7 +34,7 @@
 //           onKeyDown={handleSearch} // Trigger search on Enter key press
 //           placeholder="Search products..."
 //           autoFocus
-//           className="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+//           className="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 //         />
 //       </div>
 //     </div>
@@ -92,11 +92,11 @@ const SearchModal = ({ isOpen, onClose }) => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search for products..."
-            className="flex-grow border border-amber-400 px-4 py-2 rounded-l-full focus:outline-none"
+            className="flex-grow border border-blue-400 px-4 py-2 rounded-l-full focus:outline-none"
           />
           <button
             type="submit"
-            className="bg-amber-700 text-white px-4 py-2 rounded-r-full hover:bg-amber-800"
+            className="bg-blue-700 text-white px-4 py-2 rounded-r-full hover:bg-blue-800"
           >
             Search
           </button>
@@ -105,10 +105,10 @@ const SearchModal = ({ isOpen, onClose }) => {
         {/* Scrollable Results Container */}
         <div className="overflow-y-auto max-h-[60vh] pr-2">
           {loading ? (
-            // <p className="text-center text-amber-700">Searching...</p>
-            <div className="flex justify-center items-center space-x-2 text-amber-700">
+            // <p className="text-center text-blue-700">Searching...</p>
+            <div className="flex justify-center items-center space-x-2 text-blue-700">
               <svg
-                className="animate-spin h-5 w-5 text-amber-700"
+                className="animate-spin h-5 w-5 text-blue-700"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -138,7 +138,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                   <Link
                     to={`/product/${product._id}`}
                     onClick={onClose}
-                    className="flex items-center space-x-4 hover:bg-amber-50 p-2 rounded-lg"
+                    className="flex items-center space-x-4 hover:bg-blue-50 p-2 rounded-lg"
                   >
                     <img
                       src={product.image}
@@ -146,7 +146,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                       className="w-12 h-12 object-cover rounded"
                     />
                     <div>
-                      <p className="text-sm font-semibold text-amber-800">
+                      <p className="text-sm font-semibold text-blue-800">
                         {product.name}
                       </p>
                       <p className="text-xs text-gray-500">
