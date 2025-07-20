@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -43,10 +43,10 @@ export default function ManageProducts() {
     fetchProducts();
   }, []);
 
-  useEffect(() => {
-    applyFilters();
-    setCurrentPage(1); // reset to first page when filters/search change
-  }, [products, searchTerm, filterCategory, filterTag, filterCollection]);
+  // useEffect(() => {
+  //   applyFilters();
+  //   setCurrentPage(1); // reset to first page when filters/search change
+  // }, [products, searchTerm, filterCategory, filterTag, filterCollection]);
 
   // Fetch all products from backend
   const fetchProducts = async () => {
@@ -61,7 +61,7 @@ export default function ManageProducts() {
   };
 
   // Filter products based on search & filters
-  const applyFilters = () => {
+  const applyFilters = useCallback(() => {
     let filtered = [...products];
 
     if (searchTerm.trim() !== "") {
@@ -79,8 +79,12 @@ export default function ManageProducts() {
       filtered = filtered.filter(p => p.collection === filterCollection);
     }
     setFilteredProducts(filtered);
-  };
+  }, [products, searchTerm, filterCategory, filterTag, filterCollection]);
 
+   useEffect(() => {
+    applyFilters();
+    setCurrentPage(1); // reset to first page when filters/search change
+  }, [applyFilters]);
   // Handle pagination slicing
   const paginatedProducts = filteredProducts.slice(
     (currentPage - 1) * PAGE_SIZE,

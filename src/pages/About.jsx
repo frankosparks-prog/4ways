@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Shirt, Heart, Truck, Sparkles, PhoneCall, Store } from "lucide-react";
+import { Heart, Truck, Sparkles, PhoneCall } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
