@@ -67,11 +67,11 @@ function Navbar() {
             >
               <img
                 src="/johnsaga-logo.jpg" // replace with your logo path
-                alt="Johnsaga Logo"
+                alt="Zama Logo"
                 className="w-10 h-10 rounded-full border-2 border-blue-800 object-cover shadow-md"
               />
               <span className="text-2xl font-extrabold text-blue-800 tracking-tight">
-                Johnsaga Fashions
+                Zama Fashion
               </span>
             </Link>
           </div>
@@ -86,19 +86,46 @@ function Navbar() {
                 onClick={toggleDropdown}
                 className="flex items-center gap-1 hover:text-blue-900 transition"
               >
-                Categories {dropdownOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                Categories{" "}
+                {dropdownOpen ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
 
               <div
                 className={`absolute bg-white shadow-md border rounded-md w-64 mt-2 z-50 overflow-hidden transition-all origin-top duration-300 ${
-                  dropdownOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+                  dropdownOpen
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-95 pointer-events-none"
                 }`}
               >
-                <DropdownLink to="/category/mens-clothing" label="Men's Clothing" icon={<Shirt size={16} />} />
-                <DropdownLink to="/category/womens-clothing" label="Women's Clothing" icon={<Sparkles size={16} />} />
-                <DropdownLink to="/category/kids-clothing" label="Kids' Clothing" icon={<Baby size={16} />} />
-                <DropdownLink to="/category/shoes" label="Shoes" icon={<Footprints size={16} />} />
-                <DropdownLink to="/category/bags-accessories" label="Bags & Accessories" icon={<BriefcaseBusiness size={16} />} />
+                <DropdownLink
+                  to="/category/mens-clothing"
+                  label="Men's Clothing"
+                  icon={<Shirt size={16} />}
+                />
+                <DropdownLink
+                  to="/category/womens-clothing"
+                  label="Women's Clothing"
+                  icon={<Sparkles size={16} />}
+                />
+                <DropdownLink
+                  to="/category/kids-clothing"
+                  label="Kids' Clothing"
+                  icon={<Baby size={16} />}
+                />
+                <DropdownLink
+                  to="/category/shoes"
+                  label="Shoes"
+                  icon={<Footprints size={16} />}
+                />
+                <DropdownLink
+                  to="/category/bags-accessories"
+                  label="Bags & Accessories"
+                  icon={<BriefcaseBusiness size={16} />}
+                />
                 {/* <DropdownLink to="/category/home-decor" label="Home Decor" icon={<Sofa size={16} />} />
                 <DropdownLink to="/category/household-items" label="Household Items" icon={<Box size={16} />} /> */}
               </div>
@@ -118,7 +145,11 @@ function Navbar() {
             >
               <Search size={22} />
             </button>
-            <Link to="/cart" className="relative text-blue-700 hover:text-blue-900" aria-label="Cart">
+            <Link
+              to="/cart"
+              className="relative text-blue-700 hover:text-blue-900"
+              aria-label="Cart"
+            >
               <ShoppingCart size={24} />
               {totalItems > 0 && (
                 <span className="absolute -top-1 -right-2 bg-red-600 text-white rounded-full text-xs font-bold px-2 animate-pulse">
@@ -138,22 +169,34 @@ function Navbar() {
       >
         <div className="flex justify-between items-center p-5 border-b border-blue-200">
           <div className="flex items-center space-x-3">
-            
-          <span className="text-xl font-bold text-blue-800">Johnsaga</span>
+            <span className="text-xl font-bold text-blue-800">Zama</span>
             <img
-            src="/johnsaga-logo.jpg" // replace with your logo path
-                alt="Johnsaga Logo"
-                className="w-8 h-8 rounded-full border-2 border-blue-800 object-cover shadow-md"
-              />
+              src="/johnsaga-logo.jpg" // replace with your logo path
+              alt="Johnsaga Logo"
+              className="w-8 h-8 rounded-full border-2 border-blue-800 object-cover shadow-md"
+            />
           </div>
-          <button onClick={closeSidebar} className="text-blue-700 hover:text-blue-900">
+          <button
+            onClick={closeSidebar}
+            className="text-blue-700 hover:text-blue-900"
+          >
             <X size={28} />
           </button>
         </div>
 
         <nav className="flex flex-col p-6 space-y-5 text-blue-800 font-semibold">
-          <NavLinkMobile to="/" label="Home" icon={<Home size={20} />} onClick={closeSidebar} />
-          <NavLinkMobile to="/shop" label="Shop" icon={<ShoppingBag size={20} />} onClick={closeSidebar} />
+          <NavLinkMobile
+            to="/"
+            label="Home"
+            icon={<Home size={20} />}
+            onClick={closeSidebar}
+          />
+          <NavLinkMobile
+            to="/shop"
+            label="Shop"
+            icon={<ShoppingBag size={20} />}
+            onClick={closeSidebar}
+          />
           <button
             onClick={toggleDropdown}
             className="flex items-center gap-2 text-blue-700 font-semibold"
@@ -163,24 +206,66 @@ function Navbar() {
           </button>
           {dropdownOpen && (
             <div className="ml-6 mt-2 flex flex-col space-y-3">
-              <NavLinkMobile to="/category/mens-clothing" label="Men's Clothing" icon={<Shirt size={18} />} onClick={closeSidebar} />
-              <NavLinkMobile to="/category/womens-clothing" label="Women's Clothing" icon={<Sparkles size={18} />} onClick={closeSidebar} />
-              <NavLinkMobile to="/category/kids-clothing" label="Kids' Clothing" icon={<Baby size={18} />} onClick={closeSidebar} />
-              <NavLinkMobile to="/category/shoes" label="Shoes" icon={<Footprints size={18} />} onClick={closeSidebar} />
-              <NavLinkMobile to="/category/bags-accessories" label="Bags & Accessories" icon={<BriefcaseBusiness size={18} />} onClick={closeSidebar} />
+              <NavLinkMobile
+                to="/category/mens-clothing"
+                label="Men's Clothing"
+                icon={<Shirt size={18} />}
+                onClick={closeSidebar}
+              />
+              <NavLinkMobile
+                to="/category/womens-clothing"
+                label="Women's Clothing"
+                icon={<Sparkles size={18} />}
+                onClick={closeSidebar}
+              />
+              <NavLinkMobile
+                to="/category/kids-clothing"
+                label="Kids' Clothing"
+                icon={<Baby size={18} />}
+                onClick={closeSidebar}
+              />
+              <NavLinkMobile
+                to="/category/shoes"
+                label="Shoes"
+                icon={<Footprints size={18} />}
+                onClick={closeSidebar}
+              />
+              <NavLinkMobile
+                to="/category/bags-accessories"
+                label="Bags & Accessories"
+                icon={<BriefcaseBusiness size={18} />}
+                onClick={closeSidebar}
+              />
               {/* <NavLinkMobile to="/category/home-decor" label="Home Decor" icon={<Sofa size={18} />} onClick={closeSidebar} />
               <NavLinkMobile to="/category/household-items" label="Household Items" icon={<Box size={18} />} onClick={closeSidebar} /> */}
             </div>
           )}
-          <NavLinkMobile to="/about" label="About" icon={<Info size={20} />} onClick={closeSidebar} />
-          <NavLink to="/blog" label="Blog" icon={<Sparkles size={18} />} 
-          onClick={closeSidebar} />
-          <NavLinkMobile to="/contact" label="Contact" icon={<Phone size={20} />} onClick={closeSidebar} />
+          <NavLinkMobile
+            to="/about"
+            label="About"
+            icon={<Info size={20} />}
+            onClick={closeSidebar}
+          />
+          <NavLink
+            to="/blog"
+            label="Blog"
+            icon={<Sparkles size={18} />}
+            onClick={closeSidebar}
+          />
+          <NavLinkMobile
+            to="/contact"
+            label="Contact"
+            icon={<Phone size={20} />}
+            onClick={closeSidebar}
+          />
         </nav>
       </aside>
 
       {/* Search Modal */}
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <SearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
     </>
   );
 }

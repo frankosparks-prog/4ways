@@ -42,7 +42,7 @@ function Home() {
             >
               At{" "}
               <span className="font-semibold text-white">
-                Johnsaga Fashions
+                Zama Fashions
               </span>
               , we bring you iconic styles, timeless class, and curated pieces
               that elevate your wardrobe.
@@ -76,7 +76,7 @@ function Home() {
             className="text-4xl font-bold mb-6 text-blue-900"
             data-aos="fade-up"
           >
-            Welcome to Johnsaga Fashions
+            Welcome to Zama Fashion & Beauty Center
           </h2>
           <p
             className="text-blue-800 text-lg leading-relaxed max-w-3xl mx-auto font-medium"
@@ -140,7 +140,7 @@ function Home() {
             className="text-4xl font-bold text-center mb-14 text-blue-900"
             data-aos="fade-up"
           >
-            #JohnsagaLooks
+            #ZamaLooks
           </h2>
           <div
             className="flex gap-6 overflow-x-scroll scrollbar-hide px-4 max-w-7xl mx-auto"
@@ -153,7 +153,7 @@ function Home() {
               >
                 <img
                   src={`https://picsum.photos/400/300?random=${img + 70}`}
-                  alt={`Johnsaga fashion ${img}`}
+                  alt={`Zama fashion ${img}`}
                   className="w-full h-full object-cover"
                 />
               </div>
