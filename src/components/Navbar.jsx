@@ -67,11 +67,11 @@ function Navbar() {
             >
               <img
                 src="/johnsaga-logo.jpg" // replace with your logo path
-                alt="Zama Logo"
+                alt="Vazi E Wear Logo"
                 className="w-10 h-10 rounded-full border-2 border-blue-800 object-cover shadow-md"
               />
               <span className="text-2xl font-extrabold text-blue-800 tracking-tight">
-                Zama Fashion
+                Vazi Executive Wear
               </span>
             </Link>
           </div>
@@ -169,7 +169,7 @@ function Navbar() {
       >
         <div className="flex justify-between items-center p-5 border-b border-blue-200">
           <div className="flex items-center space-x-3">
-            <span className="text-xl font-bold text-blue-800">Zama</span>
+            <span className="text-xl font-bold text-blue-800">Vazi E Wear</span>
             <img
               src="/johnsaga-logo.jpg" // replace with your logo path
               alt="Johnsaga Logo"

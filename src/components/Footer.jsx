@@ -93,7 +93,7 @@ function Footer() {
           
           {/* Branding */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-3">Zama Fashions</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">Vazi Executive Wear</h3>
             <p className="text-gray-400">
               Your one-stop destination for elegant, curated, and affordable secondhand fashion pieces. Style is eternal.
             </p>
@@ -132,17 +132,17 @@ function Footer() {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <Instagram size={20} />
               </a>
-              <a href="mailto:info@Zamafashions.com" className="hover:text-white">
+              <a href="mailto:info@VaziEWear.com" className="hover:text-white">
                 <Mail size={20} />
               </a>
             </div>
-            <p className="text-gray-400 flex items-center gap-1"><Mail size={14} /> info@Zamafashions.com</p>
+            <p className="text-gray-400 flex items-center gap-1"><Mail size={14} /> info@VaziEWear.com</p>
             <p className="text-gray-400 flex items-center gap-1"><Phone size={14} /> +254 712 345 678</p>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-10 pt-5 text-center text-gray-500 text-xs">
-          &copy; {new Date().getFullYear()} Zama Fashions. All rights reserved.
+          &copy; {new Date().getFullYear()} Vazi Executive Wear. All rights reserved.
         </div>
       </footer>
 

@@ -26,7 +26,7 @@ const About = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Zama Fashions blends timeless elegance with bold modern trends
+            Vazi Executive Wear blends timeless elegance with bold modern trends
             to give you style that turns heads.
           </p>
           <Link
@@ -63,7 +63,7 @@ const About = () => {
                 2019 — Our Humble Beginning
               </h3>
               <p className="mt-2 text-gray-600">
-                Zama Fashions started in a small studio with a dream to
+                Vazi Executive Wear started in a small studio with a dream to
                 redefine fashion in Kenya — delivering class, comfort, and
                 confidence.
               </p>
@@ -114,7 +114,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <img
             src="https://picsum.photos/600/400?random=13"
-            alt="About Zama"
+            alt="About Vazi Executive Wear"
             className="rounded-2xl shadow-lg"
             data-aos="fade-right"
           />
@@ -123,7 +123,7 @@ const About = () => {
               Who We Are
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Zama Fashions is more than a boutique — it's a lifestyle. We
+              Vazi Executive Wear is more than a boutique — it's a lifestyle. We
               curate top-tier fashion for men, women, and kids with a focus on
               quality, class, and culture. From the latest streetwear to
               timeless elegance, we offer it all — and we deliver it with care.
@@ -142,7 +142,7 @@ const About = () => {
             className="text-3xl font-bold text-blue-900 mb-2"
             data-aos="fade-up"
           >
-            Why Choose Zama?
+            Why Choose Vazi Executive Wear?
           </h3>
           <p
             className="text-gray-600 max-w-2xl mx-auto"

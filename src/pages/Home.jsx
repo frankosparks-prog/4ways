@@ -42,7 +42,7 @@ function Home() {
             >
               At{" "}
               <span className="font-semibold text-white">
-                Zama Fashions
+                Vazi Executive Wear
               </span>
               , we bring you iconic styles, timeless class, and curated pieces
               that elevate your wardrobe.
@@ -76,7 +76,7 @@ function Home() {
             className="text-4xl font-bold mb-6 text-blue-900"
             data-aos="fade-up"
           >
-            Welcome to Zama Fashion & Beauty Center
+            Welcome to Vazi Executive Wear
           </h2>
           <p
             className="text-blue-800 text-lg leading-relaxed max-w-3xl mx-auto font-medium"
@@ -153,7 +153,7 @@ function Home() {
               >
                 <img
                   src={`https://picsum.photos/400/300?random=${img + 70}`}
-                  alt={`Zama fashion ${img}`}
+                  alt={`Vazi E.Wear ${img}`}
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -15,12 +15,12 @@ const blogPosts = [
     title: "Style Talk: How to Pair Beaded Accessories",
     date: "July 5, 2025",
     description:
-      "A modern guide on how to elevate your outfits using handcrafted beaded accessories from Zama.",
+      "A modern guide on how to elevate your outfits using handcrafted beaded accessories from Vazi Executive Wear.",
     link: "/blog/2",
   },
   {
     id: 3,
-    title: "Zama’s Artisan Stories: Behind the Seams",
+    title: "Vazi Executive Wear’s Artisan Stories: Behind the Seams",
     date: "June 25, 2025",
     description:
       "Get inspired by the hands and hearts behind our fashion—meet the creatives behind every stitch and sparkle.",
@@ -38,7 +38,7 @@ function Blog() {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">
-            Welcome to the Zama Blog
+            Welcome to the Vazi Executive Wear Blog
           </h1>
           <p className="text-xl sm:text-2xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
             Discover fashion tips, new arrivals, and behind-the-scenes stories

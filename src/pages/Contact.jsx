@@ -27,7 +27,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submitted:", formData);
-    alert("Thank you for reaching out to Zama Fashions! We'll get back to you shortly.");
+    alert("Thank you for reaching out to Vazi Executive Wear! We'll get back to you shortly.");
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -48,7 +48,7 @@ function Contact() {
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <FaEnvelope className="text-3xl text-indigo-600 mb-3 mx-auto" />
             <h3 className="text-lg font-semibold mb-1">Email</h3>
-            <p>support@Zamafashions.com</p>
+            <p>support@VaziE.Wear.com</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <FaPhoneAlt className="text-3xl text-indigo-600 mb-3 mx-auto" />
@@ -69,8 +69,8 @@ function Contact() {
         <div className="w-full h-80 rounded-xl overflow-hidden shadow-lg">
           
           <iframe
-            title="Zama Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.272553617873!2d37.07284848932761!3d0.009989144775446318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1787f630e0fc2697%3A0x11fd44a1ecdb9f45!2sZAMA%20FASHION%20%26%20BEAUTY%20CENTRE!5e0!3m2!1sen!2ske!4v1754553460198!5m2!1sen!2ske"
+            title="Vazi Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31918.54604055569!2d37.05482444014796!3d0.010364065393493025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1787f645b31e6c19%3A0x4df54c49d367f643!2sNanyuki!5e0!3m2!1sen!2ske!4v1754565258172!5m2!1sen!2ske"
             width="100%"
             height="100%"
             allowFullScreen=""
@@ -120,7 +120,7 @@ function Contact() {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/254712345678?text=Hello%20Zama%20Fashions!"
+        href="https://wa.me/254712345678?text=Hello%20Vazi%20E.Wear!"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50"
