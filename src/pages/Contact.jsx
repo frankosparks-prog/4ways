@@ -58,7 +58,7 @@ function Contact() {
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <FaMapMarkerAlt className="text-3xl text-indigo-600 mb-3 mx-auto" />
             <h3 className="text-lg font-semibold mb-1">Visit Our Store</h3>
-            <p>Ngong Road, Nairobi, Kenya</p>
+            <p>Irura Road, Nanyuki, Kenya</p>
           </div>
         </div>
       </section>
@@ -70,7 +70,7 @@ function Contact() {
           
           <iframe
             title="Zama Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63837.07869036229!2d37.0333999791738!3d-0.03853110005083897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1787f7ea2bf2a86f%3A0xe0250f55859e10ba!2sNarumoru!5e0!3m2!1sen!2ske!4v1752963882476!5m2!1sen!2ske"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.272553617873!2d37.07284848932761!3d0.009989144775446318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1787f630e0fc2697%3A0x11fd44a1ecdb9f45!2sZAMA%20FASHION%20%26%20BEAUTY%20CENTRE!5e0!3m2!1sen!2ske!4v1754553460198!5m2!1sen!2ske"
             width="100%"
             height="100%"
             allowFullScreen=""

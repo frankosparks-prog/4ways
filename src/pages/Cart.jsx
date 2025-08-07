@@ -13,7 +13,7 @@ function Cart() {
 
   // Format WhatsApp message
   const whatsappText = encodeURIComponent(
-    `Hi Johnsaga! I'm interested in buying the following items:\n\n${cartItems
+    `Hi Zamar Fashion and beauty center! I'm interested in buying the following items:\n\n${cartItems
       .map(
         (item) =>
           `• ${item.name} (Qty: ${item.quantity}) - Ksh ${(
